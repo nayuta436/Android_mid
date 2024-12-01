@@ -7,6 +7,9 @@
 第一行为标题，第二行为笔记的部分正文，第三行为时间戳，列表右侧显示笔记的分类
 ![微信图片_20241201234810](https://github.com/user-attachments/assets/2d723a2b-911e-43e7-b89b-fed0147c012c)
 
+## 编辑页的整体形式如下
+![微信图片_20241202002227](https://github.com/user-attachments/assets/d543f507-8c90-41a8-b8cd-37c9d980e7e9)
+
 
 ## （2）查询
 ### 点击右上角的放大镜，能实现查询功能
