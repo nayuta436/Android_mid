@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red">#FF7878</color>
+    <color name="yellow">#F8ED82</color>
+    <color name="blue">#7C91FF</color>
+    <color name="green">#82F88E</color>
+    <color name="orange">#F8BF82</color>
+    <color name="wihte">#ffffff</color>
+    <color name="green_two">#82F8EA</color>
+    <color name="red_two">#FA0321</color>
+    <color name="orange_two">#E35D33</color>
+    <color name="purple">#EC82F8</color>
+</resources>

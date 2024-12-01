@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/all"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="类别："
+            android:textSize="17dp" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="120dp"
+            android:layout_height="50dp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="19sp"
+            android:id="@+id/btn"
+            android:layout_marginLeft="20dp"
+            android:text="颜色"/>
+    </LinearLayout>
+    <EditText
+        android:id="@+id/note"
+        class="com.example.android.notepad.NoteEditor$LinedEditText"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        android:capitalize="sentences"
+        android:fadingEdge="vertical"
+        android:hint="请输入。。。"
+        android:gravity="top"
+        android:padding="5dp"
+        android:scrollbars="vertical"
+        android:textSize="22sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="120dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/camrea"
+            android:scaleType="centerCrop"
+            android:id="@+id/camera"/>
+    </LinearLayout>
+
+</LinearLayout>
+
+
