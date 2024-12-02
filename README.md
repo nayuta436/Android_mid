@@ -12,6 +12,52 @@
 
 
 ## （2）查询
+新建了一个select_by_title_or_content.xml文件，创建实现查询功能的对话框
+修改了NoteList类中的onOptionsItemSelected，处理menu_select菜单项的点击事件
+~~~
+case R.id.menu_select:
+                LayoutInflater flater = LayoutInflater.from(this);
+                View view = flater.inflate(R.layout.select_by_title_or_content, null);
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setView(view);
+                final AlertDialog alert = builder.create();
+                Button btn_select = (Button)view.findViewById(R.id.btn_select);
+                final EditText content=(EditText)view.findViewById(R.id.content);
+                btn_select.setOnClickListener(new View.OnClickListener()
+                {
+                    public void onClick(View v)
+                    {
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        String s = String.valueOf(content.getText()).trim();
+                        if (TextUtils.isEmpty(s)||"null".equals(s)){
+                            Toast.makeText(NotesList.this, "内容为空，请输入内容", Toast.LENGTH_SHORT).show();
+                            editor.putString("res", null);
+                        }else {
+                            editor.putString("res", s);
+                        }
+                        editor.apply();
+                        cursor = managedQuery(
+                                data,
+                                PROJECTION,
+                                null,
+                                null,
+                                NotePad.Notes.DEFAULT_SORT_ORDER
+                        );
+
+                        adapter = new SimpleCursorAdapter(
+                                v.getContext(),
+                                R.layout.noteslist_item,
+                                cursor,
+                                dataColumns,
+                                viewIDs
+                        );
+                        setListAdapter(adapter);
+                        alert.cancel();
+                    }
+                });
+                alert.show();
+                return true;
+~~~
 ### 点击右上角的放大镜，能实现查询功能
 ![微信图片_20241201235531](https://github.com/user-attachments/assets/c59f79d2-d0eb-4a1f-915b-ed2a49194d96)
 ### 能返回匹配的内容
