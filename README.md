@@ -23,6 +23,26 @@
 ### 在笔记编辑页面，能通过按钮改变背景色
 ![微信图片_20241202000929](https://github.com/user-attachments/assets/8205bb14-a7e6-46a2-9221-45c9ebb08178)
 ### 选择背景色
+新建了一个ColorPickerDialog 的类，创建一个用于颜色选择的对话框
+~~~
+public class ColorPickerDialog extends DialogFragment {
+    private final String[] colors = {"#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF"};
+
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("选择背景颜色")
+                .setItems(colors, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // 此处可以处理用户选择的颜色
+                        String selectedColor = colors[which];
+                        // TODO: 处理选中的颜色
+                    }
+                });
+        return builder.create();
+    }
+}
+~~~
 ![微信图片_20241202000921](https://github.com/user-attachments/assets/339b0340-988a-450d-9588-a87ffd3403c1)
 ### 可以看到背景颜色改变
 ![微信图片_20241202000934](https://github.com/user-attachments/assets/5832a7a6-7c76-4ee1-b3fd-23e038761ba7)
