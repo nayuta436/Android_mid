@@ -90,6 +90,38 @@ public class ColorPickerDialog extends DialogFragment {
     }
 }
 ~~~
+
+在NoteEditor类中，设置按钮点击事件
+~~~
+sharedPreferences = getSharedPreferences("image", Context.MODE_PRIVATE);
+int bgColor = sharedPreferences.getInt("bg_color", R.color.wihte);
+all.setBackgroundResource(bgColor);
+btn = (Button) findViewById(R.id.btn);
+btn.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        LayoutInflater flater = LayoutInflater.from(view.getContext());
+        View v = flater.inflate(R.layout.my_color_select, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+        builder.setView(v);
+        final AlertDialog dialog = builder.create();
+        
+        Button red = (Button) v.findViewById(R.id.red);
+        red.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putInt("bg_color", R.color.red);
+                editor.apply(); // 应用更改
+                dialog.cancel();
+            }
+        });
+     
+        dialog.show();
+    }
+});
+~~~
+
 ![微信图片_20241202000921](https://github.com/user-attachments/assets/339b0340-988a-450d-9588-a87ffd3403c1)
 ### 可以看到背景颜色改变
 ![微信图片_20241202000934](https://github.com/user-attachments/assets/5832a7a6-7c76-4ee1-b3fd-23e038761ba7)
