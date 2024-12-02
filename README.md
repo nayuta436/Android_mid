@@ -13,6 +13,7 @@
 
 ## （2）查询
 新建了一个select_by_title_or_content.xml文件，创建实现查询功能的对话框
+
 修改了NoteList类中的onOptionsItemSelected，处理menu_select菜单项的点击事件
 ~~~
 case R.id.menu_select:
