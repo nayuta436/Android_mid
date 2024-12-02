@@ -31,6 +31,6 @@
 ### 在笔记编辑界面，可以设计笔记的类别
 ![微信图片_20241202001213](https://github.com/user-attachments/assets/bde3aaca-f0c9-4b4c-8c33-fd37996038d5)
 
-## （4）图片报错
+## （4）图片保存
 ### 笔记下方支持保存图片，读取相册内的照片
 ![微信图片_20241202001804](https://github.com/user-attachments/assets/ead61129-ccf5-4d5d-83fa-309e05736bf0)
