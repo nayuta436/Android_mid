@@ -85,6 +85,7 @@ case R.id.menu_select:
 ### 在笔记编辑页面，能通过按钮改变背景色
 ![微信图片_20241202000929](https://github.com/user-attachments/assets/8205bb14-a7e6-46a2-9221-45c9ebb08178)
 ### 选择背景色
+新建了一个my_color_select.xml，创建用于颜色选择的对话框
 新建了一个ColorPickerDialog 的类，创建一个用于颜色选择的对话框
 ~~~
 public class ColorPickerDialog extends DialogFragment {
