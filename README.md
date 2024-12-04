@@ -2,6 +2,7 @@
 安卓期中作业
 具体代码见master分支
 
+--- 
 ## （1）时间戳
 ### 除了完成必须的时间戳添加外，还修改了列表的形式
 第一行为标题，第二行为笔记的部分正文，第三行为时间戳，列表右侧显示笔记的分类
@@ -10,7 +11,7 @@
 ## 编辑页的整体形式如下
 ![微信图片_20241202002227](https://github.com/user-attachments/assets/d543f507-8c90-41a8-b8cd-37c9d980e7e9)
 
-
+---
 ## （2）查询
 新建了一个select_by_title_or_content.xml文件，创建实现查询功能的对话框
 
@@ -66,6 +67,7 @@ case R.id.menu_select:
 ### 当输入为空时，能提示用户
 ![微信图片_20241201235543](https://github.com/user-attachments/assets/f5ed6b08-82ee-43cd-848e-c6eb824b84c3)
 
+---
 ## （3）更改背景色
 ### 在笔记编辑页面，能通过按钮改变背景色
 ![微信图片_20241202000929](https://github.com/user-attachments/assets/8205bb14-a7e6-46a2-9221-45c9ebb08178)
@@ -126,10 +128,12 @@ btn.setOnClickListener(new View.OnClickListener() {
 ### 可以看到背景颜色改变
 ![微信图片_20241202000934](https://github.com/user-attachments/assets/5832a7a6-7c76-4ee1-b3fd-23e038761ba7)
 
+---
 ## （3）笔记分类
 ### 在笔记编辑界面，可以设计笔记的类别
 ![微信图片_20241202001213](https://github.com/user-attachments/assets/bde3aaca-f0c9-4b4c-8c33-fd37996038d5)
 
+---
 ## （4）图片保存
 在NoteEditor中新增了saveImageToApp，将图像保存到应用程序
 ~~~
