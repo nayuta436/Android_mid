@@ -7,6 +7,19 @@
 ### 除了完成必须的时间戳添加外，还修改了列表的形式
 第一行为标题，第二行为笔记的部分正文，第三行为时间戳，列表右侧显示笔记的分类
 ![微信图片_20241201234810](https://github.com/user-attachments/assets/2d723a2b-911e-43e7-b89b-fed0147c012c)
+在NoteProvier中增加如下片段检查一个名为 values 映射（Map）中是否包含键 NotePad.Notes.COLUMN_NAME_CREATE_DATE。
+如果该键不存在，则创建一个新的日期字符串并将其放入 values 映射中
+~~~
+if (values.containsKey(NotePad.Notes.COLUMN_NAME_CREATE_DATE) == false) {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // 设置日期
+            // 设置时区为中国标准时间（东八区）TimeZone timeZone = TimeZone.getTimeZone("GMT+8");
+            //// 或者使用具体的时区ID
+            TimeZone timeZoneBeijing = TimeZone.getTimeZone("Asia/Shanghai");
+            sdf.setTimeZone(timeZoneBeijing);
+            String formattedDate = sdf.format(new Date(now)); // 将时间戳转换为指定格式的日期字符串
+            values.put(NotePad.Notes.COLUMN_NAME_CREATE_DATE, formattedDate);
+        }分析这段程序
+~~~
 
 ## 编辑页的整体形式如下
 ![微信图片_20241202002227](https://github.com/user-attachments/assets/d543f507-8c90-41a8-b8cd-37c9d980e7e9)
