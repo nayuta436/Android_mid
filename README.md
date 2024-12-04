@@ -131,5 +131,26 @@ btn.setOnClickListener(new View.OnClickListener() {
 ![微信图片_20241202001213](https://github.com/user-attachments/assets/bde3aaca-f0c9-4b4c-8c33-fd37996038d5)
 
 ## （4）图片保存
+在NoteEditor中新增了saveImageToApp，将图像保存到应用程序
+~~~
+private void saveImageToApp(Uri uri) {
+        try {
+            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
+            Long timestamp = System.currentTimeMillis();
+            imageName = timestamp + ".png";
+            File file = new File(getFilesDir(), imageName);
+            String absolutePath = file.getAbsolutePath();
+            file.getPath();
+            FileOutputStream fos = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+            fos.flush();
+            fos.close();
+            camera.setImageBitmap(bitmap);
+            Toast.makeText(this, "Image Saved", Toast.LENGTH_SHORT).show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+~~~
 ### 笔记下方支持保存图片，读取相册内的照片
 ![微信图片_20241202001804](https://github.com/user-attachments/assets/ead61129-ccf5-4d5d-83fa-309e05736bf0)
